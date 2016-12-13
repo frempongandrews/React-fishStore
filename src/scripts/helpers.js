@@ -1,4 +1,7 @@
 let helpers = {
+    formatPrice : function (cents) {
+      return "£" + ((cents/100)).toFixed(2).replace(/\B(?=(\d{3}) + (?!\d))/g, ",");
+    },
     rando: function (arr) {
       return arr[Math.floor(Math.random() * arr.length)];
     },

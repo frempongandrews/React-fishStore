@@ -222,7 +222,7 @@ input::-moz-focus-inner {
     box-sizing: border-box;
 }
 html {
-    font-size: 62.5%;
+    font-size: 60%;
 }
 body {
     background: #d4d4d4;
@@ -324,10 +324,10 @@ header.top h3:after {
     height: 90vh;
     max-width: 1500px;
     margin-top: 20px;
-    /*margin: 0 auto;*/
-    /*margin-top: 5vh;*/
-    /*-webkit-perspective: 1000;*/
-    /*perspective: 1000;*/
+    margin: 0 auto;
+    margin-top: 5vh;
+    -webkit-perspective: 2000;
+    perspective: 2000;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
 }
@@ -499,9 +499,11 @@ ul.order li span.count span {
     margin-bottom: 5px;
     clear: both;
     overflow: hidden;
+    position: relative;
 }
 .menu-fish p {
     margin: 0;
+    margin-left: 30px;
     font-size: 1.8rem;
 }
 .menu-fish .fish-name {
@@ -512,15 +514,18 @@ ul.order li span.count span {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
+    /*-webkit-box-align: center;*/
+    /*-ms-flex-align: center;*/
+    /*align-items: center;*/
 }
 .menu-fish .price {
     font-size: 1.4rem;
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end;
+    position: absolute;
+    bottom: 20px;
+    left: 160px;
 }
 .menu-fish img {
     float: left;
@@ -645,3 +650,4 @@ input[type=submit].twitter:after {
     text-align: center;
     font-size: 3rem;
 }
+

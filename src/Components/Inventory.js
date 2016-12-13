@@ -7,6 +7,7 @@ const Inventory = React.createClass({
         return (
             <div>
                 <AddFishForm addFish={this.props.addFish} />
+                <button onClick={this.props.loadSamples}>Load sample fishes</button>
             </div>
         )
     }
