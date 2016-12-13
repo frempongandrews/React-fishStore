@@ -4,17 +4,20 @@ import Order from './Components/Order';
 import Inventory from './Components/Inventory';
 import Fish from './Components/Fish';
 import './App.css';
-
+var sample = require('../sample-fishes')
 
 
 const App = React.createClass({
+    sampleLoadedStore : {
+        fishes: sample,
+        order: {}
+    },
+    emptyStore : {
+        fishes: {},
+        order: {}
+    },
     getInitialState () {
-      return {
-          fishes: {
-
-          },
-          order: {}
-      }
+      return this.sampleLoadedStore
     },
 
     addToOrder (key) {
@@ -61,7 +64,7 @@ const App = React.createClass({
                     </ul>
                 </div>
 
-                <Order fishes={this.state.fishes}/>
+                <Order fishes={this.state.fishes} order={this.state.order}/>
                 <Inventory addFish={this.addFish} loadSamples={this.loadSamples}/>
             </div>
         )
