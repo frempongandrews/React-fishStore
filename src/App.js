@@ -4,7 +4,7 @@ import Order from './Components/Order';
 import Inventory from './Components/Inventory';
 import Fish from './Components/Fish';
 import './App.css';
-import sample from '../sample-fishes';
+
 
 
 const App = React.createClass({
@@ -16,8 +16,17 @@ const App = React.createClass({
           order: {}
       }
     },
+
+    addToOrder (key) {
+        //making copy of this.state.order
+        var copyOrder = JSON.parse(JSON.stringify(this.state.order));
+        copyOrder[key] = copyOrder[key] + 1 || 1;
+        this.setState({
+            order: copyOrder
+        });
+    },
     renderFish (key) {
-        return <Fish key={key} index={key} details={this.state.fishes[key]}/>
+        return <Fish key={key} index={key} details={this.state.fishes[key]} addToOrder={this.addToOrder}/>
     },
     addFish (fish) {
         var timestamp = (new Date()).getTime();
@@ -52,7 +61,7 @@ const App = React.createClass({
                     </ul>
                 </div>
 
-                <Order />
+                <Order fishes={this.state.fishes}/>
                 <Inventory addFish={this.addFish} loadSamples={this.loadSamples}/>
             </div>
         )
