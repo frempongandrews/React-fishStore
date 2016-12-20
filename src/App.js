@@ -4,8 +4,24 @@ import Order from './Components/Order';
 import Inventory from './Components/Inventory';
 import Fish from './Components/Fish';
 import './App.css';
-var sample = require('../sample-fishes')
+var sample = require('../sample-fishes');
 
+//Firebase
+// var Rebase = require('re-base');
+// var base = Rebase.createClass({
+//     apiKey: "AIzaSyAN8I6_B8XqSODk4uushiwTtuWl9XSsL28",
+//     authDomain: "fishstore-2e3e8.firebaseapp.com",
+//     databaseURL: "https://fishstore-2e3e8.firebaseio.com",
+//     storageBucket: "fishstore-2e3e8.appspot.com",
+//     messagingSenderId: "656487354657"
+// }, 'App');
+//
+// base.syncstate (this.props.params.storeId + '/fishes', {
+//     context: this,
+//         this.setState{
+//
+//     }
+// })
 
 const App = React.createClass({
     sampleLoadedStore : {
@@ -17,8 +33,21 @@ const App = React.createClass({
         order: {}
     },
     getInitialState () {
-      return this.sampleLoadedStore
+        // return this.sampleLoadedStore
+        return this.emptyStore;
     },
+
+    componentWillMount () {
+        console.log("it will mount");
+    },
+
+    // componentDidMount () {
+    //     base.syncState(`shoppingList`, {
+    //         context: this,
+    //         state: "sampleLoadedStore",
+    //         // asArray: true
+    //     });
+    // },
 
     addToOrder (key) {
         //making copy of this.state.order
@@ -51,6 +80,7 @@ const App = React.createClass({
         })
     },
     render () {
+        console.log("it is rendered");
         //console.log(this.state);
         // console.log(sample);
         return (
