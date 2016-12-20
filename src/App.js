@@ -51,7 +51,7 @@ const App = React.createClass({
         })
     },
     render () {
-        console.log(this.state);
+        //console.log(this.state);
         // console.log(sample);
         return (
             <div className="catch-of-the-day">

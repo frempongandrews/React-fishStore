@@ -7,6 +7,7 @@ const Fish = React.createClass({
       this.props.addToOrder(key);
     },
     render () {
+        console.log(this.props.index);
         var details = this.props.details;
         var isAvailable = (details.status === "available" ? true : false);
         var buttonText = (isAvailable ? "Add To Order" : "Sold Out")

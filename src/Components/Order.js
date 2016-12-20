@@ -17,8 +17,10 @@ const Order = React.createClass({
         </li>)
     },
     render: function () {
-        var orderIds = Object.keys(this.props.order);
 
+        var orderIds = Object.keys(this.props.order);
+        // console.log(orderIds);
+        // console.log(this.props.fishes["fish1"]);
         var total = orderIds.reduce((prevTotal, key) => {
             var fish = this.props.fishes[key];
             var count = this.props.order[key];
